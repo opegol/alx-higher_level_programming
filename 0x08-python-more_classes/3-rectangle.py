@@ -56,11 +56,12 @@ class Rectangle:
 
     def __str__(self):
         """Returns a printable rectangle instance using # char."""
+        if self.__height == 0 or self.__width == 0:
+            return ""
         rec = []
-        if self.__height != 0 or self.__width != 0:
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    rec.append("#")
-                if i != self.__height - 1:
-                    rec.append("\n")
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rec.append("#")
+            if i != self.__height - 1:
+                rec.append("\n")
         return "".join(rec)
