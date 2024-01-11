@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
         try:
             for line in sys.stdin:
-                count += 1
-                line_list = line.strip().split()
+                # count += 1
+                line_list = line.split()
                 if line_list[-2] in p_code:
                     if line_list[-2] in status_code.keys():
                         status_code[line_list[-2]] += 1
@@ -42,8 +42,10 @@ if __name__ == "__main__":
                         pass
                 if count % 10 == 0:
                     print_metrics(file_size, status_code)
+                count += 1
         except EOFError:
             pass
 
     except KeyboardInterrupt:
         print_metrics(file_size, status_code)
+        raise
