@@ -45,6 +45,7 @@ if __name__ == "__main__":
                 count += 1
         except EOFError:
             pass
+        print_metrics(file_size, status_code)
 
     except KeyboardInterrupt:
         print_metrics(file_size, status_code)
