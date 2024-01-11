@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""Defines is_kind_of_class function"""
+
+
 def is_kind_of_class(obj, a_class):
     """Checks to see if obj is an instance of a_class or a derived class
 

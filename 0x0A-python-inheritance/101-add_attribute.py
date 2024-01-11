@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+"""Defines add_attribute function"""
+
+
 def add_attribute(obj, attr, val):
     """adds a new attribute to an object if it’s possible.
 

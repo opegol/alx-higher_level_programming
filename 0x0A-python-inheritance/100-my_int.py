@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+
 """defines Myint class"""
 
-class Myint(int):
+
+class MyInt(int):
     """Myint class"""
     def __eq__(self, value):
         """eq method"""

@@ -5,68 +5,68 @@ Instantiation
 
 ::
 
->>>BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>>b = BaseGeometry()
->>>type(b)
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> b = BaseGeometry()
+>>> type(b)
 <class '7-base_geometry.BaseGeometry'>
 
 ::
 
->>>b = BaseGeometry(1)
-   Traceback (most recent call last):
-   TypeError: BaseGeometry() takes no arguments
+>>> b = BaseGeometry(1)
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
 
 Methods
 =======
 
 
->>>b = BaseGeometry()
+>>> b = BaseGeometry()
 
->>>print(b.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+>>> print(b.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
 <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry object at...>>
 
 ::
 
->>>b.area() # doctest: +NORMALIZE_WHITESPACE
-   Traceback (most recent call last):
-   Exception: area() is not implemented
+>>> b.area() # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+Exception: area() is not implemented
 
 
->>>b.integer_validator("non", "number") # doctest: +NORMALIZE_WHITESPACE
-   Traceback (most recent call last):
-   TypeError: non must be an integer
+>>> b.integer_validator("non", "number") # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: non must be an integer
 
 
->>>b.integer_validator("tup", (1,)) # doctest: +NORMALIZE_WHITESPACE
-   Traceback (most recent call last):
-   TypeError: tup must be an integer
-
-::
-
->>>b.integer_validator("list_val", [1])
-   Traceback (most recent call last):
-   TypeError: list_val must be an integer
+>>> b.integer_validator("tup", (1,)) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: tup must be an integer
 
 ::
 
->>>b.integer_validator("dict_val", {1, 2})
-   Traceback (most recent call last):
-   TypeError: dict_val must be an integer
+>>> b.integer_validator("list_val", [1])
+Traceback (most recent call last):
+TypeError: list_val must be an integer
 
 ::
 
->>>b.integer_validator("Low_int", -1)
-   Traceback (most recent call last):
-   ValueError: Low_int must be greater than 0
+>>> b.integer_validator("dict_val", {1, 2})
+Traceback (most recent call last):
+TypeError: dict_val must be an integer
 
 ::
 
->>>b.integer_validator() # doctest: +NORMALIZE_WHITESPACE
-   Traceback (most recent call last):
-   TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> b.integer_validator("Low_int", -1)
+Traceback (most recent call last):
+ValueError: Low_int must be greater than 0
 
 ::
 
->>>b.integer_validator(one_arg) # doctest: +NORMALIZE_WHITESPACE
-   Traceback (most recent call last):
-   TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> b.integer_validator() # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+>>> b.integer_validator("one_arg") # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
