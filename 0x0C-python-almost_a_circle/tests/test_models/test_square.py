@@ -13,7 +13,7 @@ Unittest classes:
 
 import unittest
 from models.base import Base
-from models.Square import Square
+from models.square import Square
 
 
 class TestSquare_init(unittest.TestCase):
@@ -27,8 +27,9 @@ class TestSquare_init(unittest.TestCase):
             Square()
 
     def test_a3(self):
-        with self.assertRaises(TypeError):
-            Square(1)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(0)
+                             
 
     def test_a4(self):
         r1 = Square(1, 2)
@@ -46,19 +47,15 @@ class TestSquare_init(unittest.TestCase):
         self.assertEqual(r1.id, r2.id - 1)
 
     def test_a7(self):
-        self.assertEqual(9, Square(10, 2, 0, 0, 9).id)
-
-    def test_a8(self):
-        with self.assertRaises(TypeError):
-            Square(1, 2, 3, 4, 5, 6)
+        self.assertEqual(9, Square(10, 0, 0, 9).id)
 
     def test_a9(self):
         with self.assertRaises(AttributeError):
-            print(Square(2, 4, 0, 1, 1).__width)
+            print(Square(2, 0, 1, 1).__width)
 
     def test_a10(self):
         with self.assertRaises(AttributeError):
-            print(Square(2, 4, 0, 1, 1).__width)
+            print(Square(2, 0, 1, 1).__width)
 
     def test_a11(self):
         with self.assertRaises(AttributeError):
@@ -158,7 +155,7 @@ class TestSquare_x(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, None, 2)
 
-    def test_d2self):
+    def test_d2(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "inv", 2)
 
@@ -174,7 +171,7 @@ class TestSquare_area(unittest.TestCase):
         self.assertEqual(25, r.area())
 
     def test_e2(self):
-        r = Square(2, 10, 1, 1)
+        r = Square(6, 0, 0, 1)
         r.size = 6
         self.assertEqual(36, r.area())
 

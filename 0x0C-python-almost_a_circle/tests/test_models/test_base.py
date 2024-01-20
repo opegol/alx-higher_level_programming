@@ -50,7 +50,7 @@ class TestBase_init(unittest.TestCase):
     def test_a6(self):
         b = Base(20)
         b.id = 11
-        self.assertEqual(1, b.id)
+        self.assertEqual(11, b.id)
 
     def test_a7(self):
         with self.assertRaises(AttributeError):

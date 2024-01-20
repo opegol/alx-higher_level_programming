@@ -179,7 +179,7 @@ class TestRectangle_x(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(1, 3, None)
 
-    def test_d2self):
+    def test_d2(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(1, 2, "inv", 2)
 
