@@ -7,7 +7,7 @@ from model_state import Base
 
 
 class City(Base):
-    """Maps City class to cities Table in MySQL database"""
+    """Maps City class to cities Table in MySQL database."""
 
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True)
