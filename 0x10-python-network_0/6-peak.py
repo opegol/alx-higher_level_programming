@@ -12,13 +12,13 @@ def find_peak(list_of_integers):
     n = len(list_of_integers)
     if n == 0:
         return None
-    
+
     left = 0
     right = n - 1
-    
+
     while left < right:
         mid = (left + right) // 2
-        
+
         # Check if mid is a peak
         if list_of_integers[mid] > list_of_integers[mid + 1]:
             # Peak is on the left side
@@ -26,7 +26,6 @@ def find_peak(list_of_integers):
         else:
             # Peak is on the right side
             left = mid + 1
-    
+
     # Return the peak element
     return list_of_integers[left]
-
